@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+  <head>
+    <link rel="stylesheet" href="indexLocal.css">
+  </head>
+  <body>
+      
+      <div class="dropdown">
+        <span>Mouse over me</span>
+        <div class="dropdown-content">
+          <p>Hello World!</p>
+        </div>
+      </div>
+    <div class="w3-bar w3-black">
+        <a href="#" class="w3-bar-item w3-button">home</a>
+        <a href="#" class="w3-bar-item w3-button">order</a>
+        <a href="#" class="w3-bar-item w3-button">merch</a>
+    </div>
+    <a href="https://www.instagram.com/alexsbirthdaycakes" class="w3-bar-item w3-button"><img src="ig.jpg" alt="UH OH" style="width: 5%; height:auto;"></a>
+    <div class="w3-container w3-teal">
+        <h1>alexsbirthdaycakes</h1>
+      </div>
+      
+      <img src="ad.png" alt="UH OH" style="width: 100%; height:auto;">
+
+      
+      <div class="w3-container w3-teal">
+        <p>"they are really good"</p>
+      </div>
+
+    </body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Effect</title>
+    <style>
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.2); /* Initial transparency */
+            transition: background-color 0.2s ease; /* Smooth transition */
+        }
+    </style>
+</head>
+<body>
+  <div class="w3-bar w3-black">
+    <a href="#" class="w3-bar-item w3-button">home</a>
+    <a href="#" class="w3-bar-item w3-button">order</a>
+    <a href="#" class="w3-bar-item w3-button">merch</a>
+</div>
+<a href="https://www.instagram.com/alexsbirthdaycakes" class="w3-bar-item w3-button"><img src="ig.jpg" alt="UH OH" style="width: 5%; height:auto;"></a>
+<div class="w3-container w3-teal">
+    <h1>alexsbirthdaycakes</h1>
+  </div>
+  
+  <img src="ad.png" alt="UH OH" style="width: 100%; height:auto;">
+
+  
+  <div class="w3-container w3-teal">
+    <p>"they are really good"</p>
+  </div>
+    <div class="background">
+        Scroll down to see the background become more opaque.
+    </div>
+   
+    <div style="height: 2000px;"> <!-- Extra content to enable scrolling -->
+        Scrollable content...
+    </div>
+
+    <!-- Inline JavaScript -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const background = document.querySelector('.background');
+            const scrollY = window.scrollY || window.pageYOffset; // Get scroll position
+            const maxScroll = 500; // Adjust this value to control when the background becomes fully opaque
+            const initialAlpha = 0.2; // Initial transparency (20%)
+            const finalAlpha = 1; // Final transparency (100% opaque)
+
+            // Calculate the new alpha value based on scroll position
+            let alpha = initialAlpha + (scrollY / maxScroll) * (finalAlpha - initialAlpha);
+
+            // Clamp the alpha value between initialAlpha and finalAlpha
+            alpha = Math.min(Math.max(alpha, initialAlpha), finalAlpha);
+
+            // Update the background color
+            background.style.backgroundColor = `rgba(0, 0, 0, ${alpha})`;
+        });
+    </script>
+</body>
+</html>

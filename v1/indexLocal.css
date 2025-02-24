@@ -1,0 +1,7 @@
+/* body{
+    background-color: magenta;
+} */
+
+#grad {
+    background-image: linear-gradient(red, yellow);
+  }
