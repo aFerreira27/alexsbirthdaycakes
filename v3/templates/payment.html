@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Payment</h1>
+    <div class="order-summary">
+        <h2>Your Order</h2>
+        <p><strong>Shape:</strong> {{ order.shape }}</p>
+        <p><strong>Layers:</strong></p>
+        <ul>
+            {% for layer in order.layers %}
+                <li>{{ layer }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Frosting:</strong> {{ order.frosting }}</p>
+        <p><strong>Design Frosting:</strong> {{ order.design_frosting }}</p>
+    </div>
+    <form id="payment-form">
+        <!-- Payment fields go here -->
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>

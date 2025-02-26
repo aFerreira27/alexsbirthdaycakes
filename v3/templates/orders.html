@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Overlay for Cake Shape Selection -->
+    <div id="overlay">
+        <h2>Choose Your Cake Shape</h2>
+        <div class="shape-grid">
+            <!-- Cylinder -->
+            <div class="shape-option" id="cylinder">
+                <img src="{{ url_for('static', filename='images/cylinder.png') }}" alt="Cylinder">
+                <p>Cylinder</p>
+            </div>
+            <!-- Rectangle -->
+            <div class="shape-option" id="rectangle">
+                <img src="{{ url_for('static', filename='images/rectangle.png') }}" alt="Rectangle">
+                <p>Rectangle</p>
+            </div>
+            <!-- Tiered -->
+            <div class="shape-option" id="tiered">
+                <img src="{{ url_for('static', filename='images/tiered.png') }}" alt="Tiered">
+                <p>Tiered</p>
+            </div>
+            <!-- Specialty -->
+            <div class="shape-option" id="specialty">
+                <img src="{{ url_for('static', filename='images/specialty.png') }}" alt="Specialty">
+                <p><a href="https://ig.me/m/alexsbirthdaycakes" target="_blank">Specialty Cake</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cake Builder Section (Hidden Initially) -->
+    <div id="cake-builder" style="display: none;">
+        <form method="POST" action="{{ url_for('orders') }}">
+            <div id="cake-visual">
+                <div id="outside-view">
+                    <img src="{{ url_for('static', filename='images/vanilla_layer.png') }}" alt="Vanilla Layer" class="cake-layer-img">
+                </div>
+                <div id="cross-section">
+                    <img src="{{ url_for('static', filename='images/vanilla_layer_cross.png') }}" alt="Vanilla Layer Cross-Section" class="cake-layer-img">
+        <div id="selection-menu"></div>
+        <button id="finish-button" disabled>Finish</button>
+    </div>
+
+    <script>
+        // Image paths passed from Flask
+        const imagePaths = {
+            vanilla: {
+                outside: "{{ url_for('static', filename='images/vanilla_layer.png') }}",
+                cross: "{{ url_for('static', filename='images/vanilla_layer_cross.png') }}"
+            },
+            chocolate: {
+                outside: "{{ url_for('static', filename='images/chocolate_layer.png') }}",
+                cross: "{{ url_for('static', filename='images/chocolate_layer_cross.png') }}"
+            },
+            red_velvet: {
+                outside: "{{ url_for('static', filename='images/red_velvet_layer.png') }}",
+                cross: "{{ url_for('static', filename='images/red_velvet_layer_cross.png') }}"
+            },
+            lemon: {
+                outside: "{{ url_for('static', filename='images/lemon_layer.png') }}",
+                cross: "{{ url_for('static', filename='images/lemon_layer_cross.png') }}"
+            }
+        };
+
+        // Function to handle shape selection
+        function selectShape(shape) {
+            const overlay = document.getElementById("overlay");
+            const cakeBuilder = document.getElementById("cake-builder");
+
+            if (shape === "specialty") {
+                // Redirect to Instagram for specialty cakes
+                window.location.href = "https://ig.me/m/alexsbirthdaycakes";
+            } else {
+                // Hide overlay and show cake builder
+                overlay.style.display = "none";
+                cakeBuilder.style.display = "block";
+                addLayer(); // Add the first layer (default: vanilla)
+            }
+        }
+
+        // Add event listeners to shape options
+        document.querySelectorAll(".shape-option").forEach(option => {
+            option.addEventListener("click", () => {
+                selectShape(option.id); // Pass the shape ID to the function
+            });
+        });
+
+        // Function to add a new layer (default: vanilla)
+        function addLayer() {
+            const cakeVisual = document.getElementById("cake-visual");
+            const newLayer = document.createElement("div");
+            newLayer.className = "cake-layer";
+            newLayer.innerHTML = `
+                <div class="outside-view-layer"></div>
+                <div class="cross-section-layer"></div>
+            `;
+            cakeVisual.appendChild(newLayer);
+        }
+
+        // Function to update cake layer images
+        function updateCakeLayer(flavor) {
+            const outsideView = document.querySelector("#outside-view .cake-layer-img");
+            const crossSection = document.querySelector("#cross-section .cake-layer-img");
+
+            // Set image source based on flavor
+            outsideView.src = imagePaths[flavor].outside;
+            crossSection.src = imagePaths[flavor].cross;
+        }
+    </script>
+</body>
+</html>

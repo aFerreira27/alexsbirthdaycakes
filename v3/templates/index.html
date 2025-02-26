@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alexsbirthdaycakes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="scrolling-nav">
+        <div class="nav-content">
+            <a href="orders.html" class="nav-button">Order</a>
+            <a href="tempMerch.html" class="nav-button">Merch</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>alexsbirthdaycakes</h1>
+    </div>
+
+    <a href="https://instagram.com/alexsbirthdaycakes" class="w3-bar-item w3-button"><img src="static/images/ig.jpg" alt="UH OH" style="width: 5%; height:auto;"></a>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.scrolling-nav');
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            // Calculate new height (40% to 20% of viewport height)
+            const initialHeight = 40; // Starts at 40% of viewport height
+            const minHeight = 20; // Ends at 20% of viewport height
+            const scrollRatio = Math.min(scrollPosition / (windowHeight * 0.5), 1); // Limit to 1
+            const newHeight = initialHeight - (scrollRatio * (initialHeight - minHeight));
+
+            nav.style.height = `${newHeight}vh`;
+
+            // Update background gradient position
+            const gradientPosition = Math.min(100, (scrollPosition / (windowHeight * 0.2)) * 100) + '%';
+            document.body.style.backgroundPositionY = gradientPosition;
+            });
+    </script>
+</body>
+</html>
