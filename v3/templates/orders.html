@@ -39,12 +39,15 @@
         <form method="POST" action="{{ url_for('orders') }}">
             <div id="cake-visual">
                 <div id="outside-view">
-                    <img src="{{ url_for('static', filename='images/vanilla_layer.png') }}" alt="Vanilla Layer" class="cake-layer-img">
+                    <img src="{{ url_for('static', filename='images/vanilla_layer.png') }}" alt="Vanilla Layer" class="cake-layer-img flipped">
                 </div>
                 <div id="cross-section">
                     <img src="{{ url_for('static', filename='images/vanilla_layer_cross.png') }}" alt="Vanilla Layer Cross-Section" class="cake-layer-img">
-        <div id="selection-menu"></div>
-        <button id="finish-button" disabled>Finish</button>
+                </div>
+            </div>
+            <div id="selection-menu"></div>
+            <button id="finish-button" disabled>Finish</button>
+        </form>
     </div>
 
     <script>
