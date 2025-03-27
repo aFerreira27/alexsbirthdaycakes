@@ -14,11 +14,230 @@
         </div>
     </nav>
 
-    <div class="coming-soon">
-        <h1>👕Let me know🧢</h1>
-        <a href="https://forms.gle/jSa3Aujbsjidp6Vx5" nav-button">Submit a Design</p>
-        
-        <a href="index.html" class="nav-button">Back to Home</a>
+    <div id='collection-component-1743053357790'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'u1shtc-5e.myshopify.com',
+      storefrontAccessToken: 'f1619da8133e576a8dd2e5307a8eb61e',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('collection', {
+        id: '628572487953',
+        node: document.getElementById('collection-component-1743053357790'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(33.33333% - 30px)",
+          "margin-left": "30px",
+          "margin-bottom": "50px",
+          "width": "calc(33.33333% - 30px)"
+        },
+        "img": {
+          "height": "calc(100% - 15px)",
+          "position": "absolute",
+          "left": "0",
+          "right": "0",
+          "top": "0"
+        },
+        "imgWrapper": {
+          "padding-top": "calc(75% + 15px)",
+          "position": "relative",
+          "height": "0"
+        }
+      },
+      "button": {
+        "border-radius": "8px"
+      },
+      "price": {
+        "color": "#056127"
+      },
+      "compareAt": {
+        "color": "#056127"
+      },
+      "unitPrice": {
+        "color": "#056127"
+      }
+    },
+    "buttonDestination": "modal",
+    "contents": {
+      "options": false
+    },
+    "text": {
+      "button": "View product"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-30px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "border-radius": "8px"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "compareAt": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      },
+      "unitPrice": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        "border-radius": "8px"
+      },
+      "title": {
+        "color": "#555656"
+      },
+      "header": {
+        "color": "#555656"
+      },
+      "lineItems": {
+        "color": "#555656"
+      },
+      "subtotalText": {
+        "color": "#555656"
+      },
+      "subtotal": {
+        "color": "#555656"
+      },
+      "notice": {
+        "color": "#555656"
+      },
+      "currency": {
+        "color": "#555656"
+      },
+      "close": {
+        "color": "#555656",
+        ":hover": {
+          "color": "#555656"
+        }
+      },
+      "empty": {
+        "color": "#555656"
+      },
+      "noteDescription": {
+        "color": "#555656"
+      },
+      "discountText": {
+        "color": "#555656"
+      },
+      "discountIcon": {
+        "fill": "#555656"
+      },
+      "discountAmount": {
+        "color": "#555656"
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {},
+  "lineItem": {
+    "styles": {
+      "variantTitle": {
+        "color": "#555656"
+      },
+      "title": {
+        "color": "#555656"
+      },
+      "price": {
+        "color": "#555656"
+      },
+      "fullPrice": {
+        "color": "#555656"
+      },
+      "discount": {
+        "color": "#555656"
+      },
+      "discountIcon": {
+        "fill": "#555656"
+      },
+      "quantity": {
+        "color": "#555656"
+      },
+      "quantityIncrement": {
+        "color": "#555656",
+        "border-color": "#555656"
+      },
+      "quantityDecrement": {
+        "color": "#555656",
+        "border-color": "#555656"
+      },
+      "quantityInput": {
+        "color": "#555656",
+        "border-color": "#555656"
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
     </div>
 </body>
 </html>
