@@ -4,7 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merch Coming Soon</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        .scrolling-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white; /* Add background color */
+            z-index: 1000; /* Ensure nav stays on top */
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow */
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            background-color: #056127;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #034319;
+        }
+
+        #collection-component-1743053357790 {
+            margin-top: 70px; /* Add space for fixed nav */
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav class="scrolling-nav">
@@ -13,7 +47,6 @@
             <a href="tempMerch.html" class="nav-button">Merch</a>
         </div>
     </nav>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
     <div id='collection-component-1743053357790'></div>
 <script type="text/javascript">
 /*<![CDATA[*/
